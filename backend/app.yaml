@@ -7,3 +7,5 @@ handlers:
 - url: /.*
   script: _go_app
 
+includes:
+- ./.credential/firebase_credential.yaml
