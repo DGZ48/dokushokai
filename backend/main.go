@@ -20,7 +20,7 @@ import (
 func privateHandler(w http.ResponseWriter, r *http.Request) {
 
 	ctx := appengine.NewContext(r)
-	auth, err := authByFirebase(ctx)
+	auth, err := initAuthClient(ctx)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprintln(w, "unexpected firebase error")
@@ -51,7 +51,7 @@ func optionHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func authByFirebase(ctx context.Context) (*auth.Client, error) {
+func initAuthClient(ctx context.Context) (*auth.Client, error) {
 
 	creds, err := google.CredentialsFromJSON(ctx, []byte(os.Getenv("FIREBASE_CREDENTIALS")))
 	if err != nil {
