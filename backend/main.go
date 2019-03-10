@@ -11,6 +11,7 @@ import (
 	"firebase.google.com/go/auth"
 	"github.com/gorilla/mux"
 	"golang.org/x/oauth2/google"
+	"golang.org/x/xerrors"
 	"google.golang.org/api/option"
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/log"
@@ -19,10 +20,16 @@ import (
 func privateHandler(w http.ResponseWriter, r *http.Request) {
 
 	ctx := appengine.NewContext(r)
-	auth := authByFirebase(ctx)
+	auth, err := authByFirebase(ctx)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		fmt.Fprintln(w, "unexpected firebase error")
+		return
+	}
+
 	authHeader := r.Header.Get("Authorization")
 	idToken := strings.Replace(authHeader, "Bearer ", "", 1)
-	_, err := auth.VerifyIDToken(context.Background(), idToken)
+	_, err = auth.VerifyIDToken(context.Background(), idToken)
 	if err != nil {
 		w.WriteHeader(http.StatusUnauthorized)
 		fmt.Fprintln(w, "auth error")
@@ -44,26 +51,26 @@ func optionHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func authByFirebase(ctx context.Context) *auth.Client {
+func authByFirebase(ctx context.Context) (*auth.Client, error) {
 
 	creds, err := google.CredentialsFromJSON(ctx, []byte(os.Getenv("FIREBASE_CREDENTIALS")))
 	if err != nil {
 		log.Criticalf(ctx, "error: %v\n", err)
-		os.Exit(1)
+		return nil, xerrors.Errorf("can not load firebase credentials: %w", err)
 	}
 	opt := option.WithCredentials(creds)
 	app, err := firebase.NewApp(ctx, nil, opt)
 	if err != nil {
 		log.Criticalf(ctx, "error: %v\n", err)
-		os.Exit(1)
+		return nil, xerrors.Errorf("can not load initialize credentials: %w", err)
 	}
 	auth, err := app.Auth(ctx)
 	if err != nil {
-		log.Criticalf(ctx, "error: %v\n", err)
-		os.Exit(1)
+		log.Infof(ctx, "error: %v\n", err)
+		return nil, xerrors.Errorf("authorization failure: %w", err)
 	}
 
-	return auth
+	return auth, nil
 }
 
 func headerMiddleware(next http.Handler) http.Handler {
