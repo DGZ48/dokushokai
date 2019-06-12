@@ -6,14 +6,405 @@
 		<title>Dokushokai</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<script src="./js/script.js"></script>
 	</head>
 	<body>
-		<section class="section">
-			<div class="container">
-			  <h1 class="title">Hello World</h1>
-			  <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
-			  <div id="app" />
+		<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="https://bulma.io">
+					<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+				</a>
+				  
+				<!-- これなんだ？ -->
+				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-burger-target">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+				  
+			<div id="navbar-burger-target" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item">技術書一覧</a>
+				</div>
+				  
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-light">Logout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<section class="hero is-dark">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">技術書一覧</h1>
+					<h2 class="subtitle">AmazonのAPIから拾ってきた本たち</h2>
+				</div>
 			</div>
 		</section>
+		<section class="section">
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+						<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+							<a class="pagination-previous">Previous</a>
+							<a class="pagination-next">Next page</a>
+							<ul class="pagination-list">
+								<li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+								<li><span class="pagination-ellipsis">&hellip;</span></li>
+								<li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+								<li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+								<li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+								<li><span class="pagination-ellipsis">&hellip;</span></li>
+								<li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="columns">
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="columns">
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="columns">
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column is-3">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<!--
+									<div class="media-left">
+										<figure class="image is-48x48">
+											<img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+										</figure>
+									</div>-->
+									<div class="media-content">
+										<p class="title is-4">書籍の名前</p>
+										<p class="subtitle is-6">出版社</p>
+									</div>
+								</div>
+								<div class="content">
+									ここには書籍の内容説明的な？ものが入る感じです。とりあえず長めの日本語を入れてそれっぽさを出してみます。このぐらいの長さでちょうどいい感じでしょうか。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="columns">
+					<div class="column">
+						<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+							<a class="pagination-previous">Previous</a>
+							<a class="pagination-next">Next page</a>
+							<ul class="pagination-list">
+								<li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+								<li><span class="pagination-ellipsis">&hellip;</span></li>
+								<li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+								<li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+								<li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+								<li><span class="pagination-ellipsis">&hellip;</span></li>
+								<li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p><strong>Dokushokai</strong> by <a href="https://github.com/DGZ48">dgz48.xyz</a>.</p>
+			</div>
+		</footer>
 	</body>
 </html>
